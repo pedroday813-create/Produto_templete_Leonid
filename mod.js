@@ -2,6 +2,10 @@
 
 import { listaProdutos } from "./produtos.js"
 
+function criarEstrelas(classificacao) {
+    return "★".repeat(classificacao) + "☆".repeat(5 - classificacao)
+}
+
 function criarProduto(produto) {
     const produtoElement = document.createElement("div")
     produtoElement.className = "produto"
@@ -13,17 +17,20 @@ function criarProduto(produto) {
     descricaoElement.textContent = produto.descricao
 
     const precoElement = document.createElement("p")
-    precoElement.textContent = `R$ ${produto.preco.toFixed(2)}`
+    precoElement.className = "preco"
+    precoElement.textContent = `R$ ${produto.preco.toFixed(2).replace(".", ",")}`
 
     const imagemElement = document.createElement("img")
     imagemElement.src = `./img/${produto.imagem}`
     imagemElement.alt = produto.nome
 
     const categoriaElement = document.createElement("p")
-    categoriaElement.textContent = `Categoria: ${produto.categoria}`
+    categoriaElement.className = "categoria"
+    categoriaElement.textContent = produto.categoria
 
     const classificacaoElement = document.createElement("p")
-    classificacaoElement.textContent = `Classificação: ${produto.classificacao} estrelas`
+    classificacaoElement.className = "classificacao"
+    classificacaoElement.textContent = `${criarEstrelas(produto.classificacao)} (${produto.classificacao}/5)`
 
     produtoElement.append(
         nomeElement,
@@ -39,6 +46,4 @@ function criarProduto(produto) {
 
 const produtosElement = listaProdutos.map(criarProduto)
 
-document
-    .getElementById("produtos-container")
-    .append(...produtosElement)
+document.getElementById("produtos-container").append(...produtosElement)

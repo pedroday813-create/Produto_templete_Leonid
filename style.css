@@ -6,46 +6,92 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-}
-
-#produtos-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fb, #e8edf7);
+    color: #222;
+    min-height: 100vh;
+    padding: 30px 20px;
 }
 
 h1 {
     text-align: center;
-    margin: 20px 0;
-    color: #333;
+    margin-bottom: 30px;
+    color: #1f2937;
+    font-size: 2.2rem;
+}
+
+#produtos-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .produto {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 250px;
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 22px;
+    width: 270px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+.produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
 }
 
 .produto h2 {
-    font-size: 18px;
+    font-size: 1.1rem;
     margin-bottom: 10px;
+    text-align: center;
+    color: #111827;
+    min-height: 52px;
 }
 
 .produto p {
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
     text-align: center;
+    color: #4b5563;
+    line-height: 1.4;
 }
 
 .produto img {
-    width: 150px;
-    height: auto;
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin: 14px 0;
+    transition: transform 0.25s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.06);
+}
+
+.produto .preco {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #16a34a;
     margin: 10px 0;
+}
+
+.produto .categoria {
+    background-color: #eef2ff;
+    color: #4338ca;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin-top: 6px;
+}
+
+.produto .classificacao {
+    color: #f59e0b;
+    font-weight: bold;
+    margin-top: 10px;
 }
