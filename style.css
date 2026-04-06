@@ -3,3 +3,49 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+
+#produtos-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+}
+
+.produto h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.produto img {
+    width: 150px;
+    height: auto;
+    margin: 10px 0;
+}
